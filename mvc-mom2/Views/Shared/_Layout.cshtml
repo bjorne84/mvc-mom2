@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="~/css/styleBiscomp.css">
+    <title>@ViewData["Title"] | Jämför affärssystem och bokföringsprogram</title>
+</head>
+<body>
+    <!--Håller hela innehållet på sidan-->
+    <div id="container">
+        <header>
+            <!--Wrapper for bakgrundsfärg i headern-->
+            <div id="headWrapper">
+                <div id="logo">
+                    <a asp-controller="Home" asp-action="Index"><img class="logosize" src="~/images/biscomp_logo_400.png" alt="logotyp"></a>
+                </div>
+                <div id="companyName">
+                    <p>Ditt namn: @ViewBag.savedInput</p>
+                </div>
+
+                <!--Den stora menyn-->
+                <nav id="bignav">
+                    <!--Håller menylänkarna-->
+                    <div class="largemenu" id="largemenu">
+                        <a asp-area="" asp-controller="Home" asp-action="Index">Start</a>
+                        <a asp-area="" asp-controller="Home" asp-action="Blog">Blog</a>
+                        <a asp-area="" asp-controller="Home" asp-action="Contact">Kontakt</a>
+                    </div>
+                </nav>
+
+                <!--Mobilmeny-->
+                <nav id="mobnav">
+                    <!--Håller menylänkarna-->
+                    <div class="mobilmenu" id="mobilmenu">
+                        <a href="biscomp.html" title="Home">Home</a>
+                        <a href="blog.html" title="Blog">Blog</a>
+                        <a href="info.html" title="Info och kontakt">Info</a>
+                    </div>
+                </nav>
+                <!--Hamburger-meny ikon-->
+                <a href="javascript:void(0);" id="icon" onclick="myFunction()">&#9776;</a>
+                <!--Förstoringsglas ikon-->
+                <a href="#"><img id="glass" src="images/search50.png" alt="Sök ikon"></a>
+            </div>
+        </header>
+        @RenderBody();
+        <footer>
+            <div id="footColor">
+                <p id="footHolder">&copy; 2020 Biscomp AB </p>
+                <a id="a1" href="mailto:info@biscomp.se">info@biscomp.se</a>
+                <a id="a2" href="#"> +46 123 4567</a>
+            </div>
+        </footer>
+
+
+
+        <!--END Container-->
+    </div>
+
+</body>
+</html>
+<!--JavaScript kod för hamburgermenyn-->
+<script>
+    /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+    function myFunction() {
+        var x = document.getElementById("mobilmenu");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+</script>

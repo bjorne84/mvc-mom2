@@ -1,0 +1,49 @@
+﻿@model mvc_mom2.Models.Area
+@{
+    ViewData["Title"] = "Kontakt";
+}
+<!--Allt innehåll mellan header och footer-->
+<div id="mainInfo">
+    <!--sectionselement håller info för google skulls SEO-vänligt, visar att allt hör ihop-->
+    <section id="sectionInfo">
+        <!--Article-element som håller info om bolaget och kontaktuppgifter-->
+        <article id="about">
+            <h2 id="bis">Biscomp AB</h2>
+            <p>
+                Jag som driver biscomp heter Björn Edin och är redovisningsekonom. Jag saknade en bra guide och översikt över de olika <b>affärssystem</b> och <b>bokföringsprogram</b> som finns på marknaden så därför starade jag biscomp. <br /> <br />
+                Det är en affiliatesite vilket innebär att en liten ekonomisk ersättning kan utgå till mig när sidan slussar vidare trafik til leverantöter och försäljning sker.
+            </p>
+            <h2 class="h2Color">Kontakt:</h2>
+            <p>
+                Biscomp AB <br />
+                Kontaktvägen 12 A <br />
+                831 47 Östersund <br />
+            </p>
+        </article>
+        <!--Div som omsluter bild-->
+        <div id="imgBiscomp">
+            <img src="~/images/jag_fjall3.jpg" alt="Bild på mig" />
+        </div>
+
+        <!--Div med kontaktformuläret-->
+        <div id="contForm">
+            <h3>Räkna ut arean!</h3>
+            <form class="contactforms" method="post" asp-controller="Home" asp-action="Contact">
+                <label asp-for="width" class="control-label"></label>
+                <input type="range" asp-for="width" class="form-control" min="1" max="100" value="10" oninput="this.nextElementSibling.value = this.value" /><output></output>
+                <span asp-validation-for="width" class="text-danger"></span><br />
+                <label asp-for="lenght" class="control-label"></label>
+                <input asp-for="lenght" class="form-control" /><br />
+                <span asp-validation-for="lenght" class="text-danger"></span><br />
+                <label asp-for="dimension" class="control-label">Meter</label>
+                <input type="radio" asp-for="dimension" value="meter" class="form-control" /><br />
+                <label asp-for="dimension" class="control-label">Centimeter</label>
+                <input type="radio" asp-for="dimension" value="centimeter" class="form-control" /><br />
+                <input type="submit" value="räkna ut" />
+            </form>
+            <h3>Arean är: @ViewBag.Result @ViewData["areaMeasure"]</h3>
+          
+
+        </div>
+    </section>
+</div>

@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Biscomp";
+}
+<main id="main">
+    <partial name="_partial" />
+    <!--Bild stor banner-->
+    <div id="bigBanner">
+        <img src="~/images/bokforing960.jpg"
+             alt="Banner med bildtext 'byt affärssystem'" />
+    </div>
+    <!--Hållet kort pitch i textform-->
+    <div id="pitch">
+        <h2>Vad heter du?</h2>
+        @using (Html.BeginForm())
+        {
+            @Html.TextBox("namnInput");
+            <input type="submit" value="Skriv ditt namn" />
+
+        }
+        <p>Resultat: @ViewBag.savedInput</p>
+        <h2>
+            &rdquo;Att sköta bokföringen själv skall vara enkelt och hjälpa dig fatta
+            rätt beslut&rdquo;
+        </h2>
+    </div>
+
+    <!--Section som håller bild och smakprov på framhävda artiklar fårn bloggen-->
+    <section id="section1">
+        <!--Bild bredvid text-->
+        <div id="featuredImage">
+            <a href="biscomp.html">
+                <img class="boarderImg"
+                     src="~/images/typeface.jpg"
+                     alt="Bild på typsnitt" />
+            </a>
+        </div>
+        <!--Articleelement som innehåller smakprov från ett inlägg i bloggen-->
+        <article id="article1">
+            <h2 class="h2Color">Välja typsnitt är ibland första steget</h2>
+            <p class="first">
+                Att välja ett bra typsnitt är bara en liten del av god typografi. Ännu
+                viktigare är vad du gör med typsnittet som storlek, stil, radavstånd,
+                radlängd, färg, kontrast …<br /><br />
+                Det tvistas om seriff- eller sans-seriff typsnitt är bäst för
+                skärmläsning. De flesta verkar anse att linjärer (sans-seriffer) är bäst
+                för skärm. <br /><br />Och det stämmer, generellt sett, men det finns
+                seriff-typsnitt som är gjorda med skärm i åtanke och som är bättre än
+                sans-seriffer gjorda för papper.
+            </p>
+            <br />
+            <a href="biscomp.html">Läs mer</a>
+        </article>
+    </section>
+
+    <!--Håller widgets-->
+    <div id="widgets">
+        <div id="widget1">
+            <img src="~/images/widget.jpg" alt="widget 1" />
+        </div>
+        <div id="widget2">
+            <img src="~/images/widget.jpg" alt="widget 2" />
+        </div>
+        <div id="widget3">
+            <img src="~/images/widget.jpg" alt="widget 3" />
+        </div>
+    </div>
+
+    <!--END Main-->
+</main>

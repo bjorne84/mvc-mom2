@@ -1,0 +1,232 @@
+﻿@model mvc_mom2.Models.ViewModel
+@{
+    ViewData["Title"] = "Blogg";
+}
+<!--Main som håller huvudinnehållet-->
+<div id="mainBlog">
+    <!--Section som innehåller blogartiklarna-->
+    <section id="sectionBlog">
+        <!--Bloginlägg ett i i ett article element-->
+        <article id="blog1" class="blogA">
+            <table class="table">
+                <tr>
+                    <th>Id</th>
+                    <th>Namn</th>
+                </tr>
+                @foreach (mvc_mom2.Models.Skoter skoter in Model.SkoterLista)
+                {
+                    <tr>
+                        <td>@skoter.Make</td>
+                        <td>@skoter.Model</td>
+                    </tr>
+                }
+            </table>
+            <partial name="_partial" />
+            <h2 class="h2Color">Webbtypografi</h2>
+            <img class="boarderImg" src="~/images/image1mall5.jpg" alt="Bild om typsnitt">
+            <p class="foto"><b>Fotograf: </b>Kaboompics</p>
+            <!-- blockquote för långt citet, klass q för att försöka köra css first letter och göra citattecknet större, html symbolkod för svensk citattecken-->
+            <blockquote><p class="q">&rdquo; Den som vid sidan av arbetet med datorn utvecklar sitt seende och sin skarpsynthet genom att teckna, hon eller han kan bli den webb-designer som konstnärligt sett skiljer sig från mängden.<br /><br />Den som ser det andra inte har sett. Och om jag idag var 17 år, och en dag hoppades på att kunna försörja mig genom att arbeta med webb-design, så skulle jag gå i Karl-Erik Forsbergs fotspår.<br /><br />Jag skulle läsa allt jag kom över om typografi, jag skulle skaffa mig kalligrafiska redskap och hänge mig åt hantverket trots, eller just därför, att det är med datorer jag skall arbeta.&rdquo;</p></blockquote>
+            <!--P divar för annan storlek och typsnitt på denna infotext om författare osv-->
+            <p class="small"><b>Publicerad: </b>2012-11-01</p>
+            <p class="etikett"><b>Etiketter: </b><a href="#">#Web design, </a><a href="#">#Typografi, </a><a href="#"> #Kalligrafi</a></p>
+        </article>
+
+        <!--Bloginlägg två i i ett article element-->
+        <article id="blog2" class="blogA">
+            <h2 class="h2Color">Välja typsnitt är ibland första steget</h2>
+            <!--p klass first för att förstora första bokstaven-->
+            <p class="first">
+                Att välja ett bra typsnitt är bara en liten del av god typografi. Ännu viktigare är vad du gör med typsnittet som storlek, stil, radavstånd, radlängd, färg, kontrast …<br /><br />
+                Det tvistas om seriff- eller sans-seriff typsnitt är bäst för skärmläsning. De flesta verkar anse att linjärer (sans-seriffer) är bäst för skärm. Och det stämmer, generellt sett, men det finns seriff-typsnitt som är gjorda med skärm i åtanke och som är bättre än sans-seriffer gjorda för papper.<br /><br />
+                Viktigast är att använda ett typsnitt som är anpassat för skärm och inte för papper, tex Geneva, Charcoal, Lucida Grande, Verdana, Georgia mfl. Eller de nya “C-typsnitten“ från Microsoft:
+            </p>
+            <!--tabelklass för styling av tabell-->
+            <table class="labTable">
+                <thead>
+                    <tr>
+                        <th>Sans-serif:</th>
+                        <th>Serif:</th>
+                        <th>Monospace:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="Calabri">Calabri</td>
+                        <td id="Cambria">Cambria</td>
+                        <td id="Consolas">Consolas</td>
+                    </tr>
+                    <tr>
+                        <td id="Candara">Candara</td>
+                        <td id="Constantia">Constantia</td>
+                    </tr>
+                    <tr>
+                        <td id="Corbel">Corbel</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Det finns tio typsnitt som du kan vara säker på att alla har (nåja), dessa följer med Windows, MS Office, Internet Explorer och Mac:</p>
+            <ul>
+                <li>Andale Mono</li>
+                <li>Arial</li>
+                <li>Arial Black</li>
+                <li>Comic Sans MS</li>
+                <li>Courier New</li>
+                <li>Georgia</li>
+                <li>Impact</li>
+                <li>Times New Roman</li>
+                <li>Trebuchet MS</li>
+                <li>Verdana</li>
+            </ul>
+            <p>För en lista med typsnitt så surfa hit:</p>
+            <a href="http://mkv.itm.miun.se/personal/mikael.becker/typografi/lista.html.">http://mkv.itm.miun.se/personal/mikael.becker/typografi/lista.html.</a>
+            <!--Annan storlek och typsnitt på denna infotext om författare osv-->
+            <p class="small">Publicerad 2012-11-01</p>
+            <p class="small"></p>
+            <p>
+                Ett bra typsnitt för skärm har en relativt hög x-höjd och är något bredare med kraftiga linjer. Allt för att skapa ett större ljusrum inuti bokstaven. Det gör naturligtvis att typsnittet tar större plats än ett typsnitt för papper.<br /><br /> Ett typsnitt för skärm kan inte innehålla lika mycket detaljer som varierande linjetjocklekar och seriffer. Gör att typsnitt för skärm kan se stora och klumpiga ut på papper. Men det går ju att lösa genom att ha en stilmall för skärm och en för utskrift.<br /><br />
+                Mixtra inte för mycket med bokstavsmellanrummen i brödtext. Värdena är redan bra som standard. Men rubriker kan behöva justeras.
+            </p><br />
+            <div id="img2Div">
+                <img id="img2" class="boarderImg" src="~/images/image2mall5.jpg" alt="Stående bild till höger med tema typografi">
+                <!--Fotoklasser i p element för ensild styling-->
+                <p class="foto img2T"><b>Fotograf: </b>Markus Spiske</p>
+                <p class="foto">Det är spännande med typografi.</p>
+            </div>
+            <h3>Respektera texten och läsaren</h3>
+            <p>
+                Kursiv och understruken text är mer svårläst på skärm. Så markera kortare citat med fet text, eller längre citat med ett eget stycke.<br /><br />
+                Radavstånd och marginaler behöver vara något större på skärm jämfört med papper. Radlängd kan vara ungefär densamma som för papper, 55 ± 10 tecken. Tänk på att webbläsare inte kan avstava (man kan ge avstavningsförslag i html-koden men är det mycket text blir det för mycket jobb).<br /><br /> Marginaljustering går alltså att använda men det blir inte bra. 99% använder vänster justering, man behöver inte ange det i koden det är satt som standard-värde.
+                De flesta webbläsarna är för snåla med radavstånd, öka på 1-2 pixlar eller 10-20 %
+            </p><br />
+            <!--p klass för citat och q klass för citat-->
+            <p class="quote"><q class="bigQ"> Även det bästa typsnitt kan fördärvas av en slarvigt genomförd typografi. </q></p><p>Carl Fredrik Hultenheim</p>
+            <p class="small"><b>Skriven av: </b> Mikael Becker</p>
+            <p class="small"><b>Publicerad: </b>2012-11-01</p>
+            <!--p klass för etiketter-->
+            <p class="etikett"><b>Etiketter: </b><a href="#">#Typsnitt, </a><a href="#">#Typografi, </a><a href="#">#Läsbarhet, </a><a href="#">#Läslighet, </a><a href="#">#Webb, </a><a href="#">#Skärm</a></p>
+        </article>
+
+        <!--Bloginlägg tre i i ett article element-->
+        <article id="blog3" class="blogA">
+            <h2 class="h2Color">Kontrast, för lite, för mycket …</h2>
+            <!--p-klass first för att förstora första bokstaven-->
+            <p class="first">Längre tillbaka i tiden, då de flesta klassiska typsnitten gjordes, var problemet att vi hade svårt att få bra läsbelysning plus att papperet inte var lika bra som idag.<br /><br /> Idag är en del skärmar så ljusstarka att det kan vara svårt att läsa svart text på vit botten. En vanlig 24 tums-skärm har ungefär samma ljusstyrka som 70 stearinljus.</p>
+            <p class="p-list"><b>Här kan du kontrollera kontrasten mellan de färger du valt: </b><a href="http://www.etre.com/tools/colourcheck">http://www.etre.com/tools/colourcheck</a>För stor kontrast kan vara lika problematisk som för liten kontrast.</p>
+            <p class="p-list"><b>Här kan du se hur din webbplats ser ut för någon som är färgblind: </b><a href="http://vischeck.com">http://vischeck.com</a></p>
+            <img id="img3" class="boarderImg" src="images/image3mall5.jpg" alt="Liten bild typografi">
+            <p class="foto"><b>Fotograf: </b>Kaboompics</p>
+            <p class="foto">Text på trä är intressant.</p>
+            <p class="p-list"><b>Här kan du leka fram olika färgscheman: </b><a href="http://kuler.adobe.com">http://kuler.adobe.com</a>Kom ihåg att kontrollera färgerna på dina länkar också</p>
+            <h3>Kom ihåg de typografiska detaljerna</h3>
+            <p>Det finns ingen anledning till att inte ha korrekta citat-tecken, tanke-streck osv på internet.</p>
+            <p class="p-list"><b>En av många sidor där man kan leta reda på koden för specialtecken (character entities): </b><a href="http://www.digitalmediaminute.com/reference/entity/">http://www.digitalmediaminute.com/reference/entity/</a></p>
+            <p>Indrag istället för blankrad fungerar alldeles utmärkt. Men ett fyrkantsindrag blir i minsta laget, gärna två fyrkanter. Eller varför inte använda anfang.</p>
+            <h3>Siffror bokstaveras upp till tolv.</h3>
+            <p>Gemena siffror fungerar jättebra men finns inte i alla typsnitt. Kapitäler går naturligtvis att använda men en skärm är oftast för grov för att man ska kunna se skillnad på äkta och falska kapitäler.</p>
+            <img id="img4" class="boarderImg" src="images/image4mall5.jpg" alt="Liten bild typografi">
+            <p class="foto"><b>Fotograf: </b>Johnny Anderssen</p>
+            <p class="foto">Text i neonljus är häftigt.</p>
+            <p class="small"><b>Skriven av: </b>Mikael Becker</p>
+            <p class="small"><b>Publicerad: </b> 2012-11-01</p>
+            <p class="etikett"><b>Etiketter: </b><a href="#">#Design, </a><a href="#">#Typografi, </a><a href="#">#Läsbarhet, </a><a href="#">#Läslighet, </a><a href="#">#Färg</a></p>
+        </article>
+
+        <!--Blogginlägg fyra i i ett article element-->
+        <article id="blog4" class="blogA">
+            <h2 class="h2Color">Frames och tables ska inte användas för layout</h2>
+            <img class="boarderImg" src="~/images/image5mall5.jpg" alt="Stor bild typografi">
+            <!--p-klass first för att förstora första bokstaven-->
+            <p class="first">
+                Använd inte frames, använd server-side includes istället (eller php, asp …). Använd inte tabeller för layout, använd CSS. Använd alltid H1-H6 för rubriker, om det inte räcker, lägg till tex h1.svart, om du vill ha flera H1-rubriker med olika färg.<br /><br /> Google och andra blindsurfare förstår då fortfarande att det är en rubrik.
+                Utseendemässigt är det ingen skillnad på &lt;i&gt; och &lt;em&gt;, båda gör texten kursiv, men &lt;i&gt; är bara dekoration, &lt;em&gt; emphasis talar också om för besökaren att detta är något speciellt. Skilj på innehåll och utseende. <br /><br /><b>Alltså: </b>innehållet struktureras med HTML, medan utseendet styrs helt och hållet av CSS. Titta på tex <a href="http://www.csszengarden.com">http://www.csszengarden.com</a>för inspiration.<br /><br />
+                Använd gärna relativa mått som em, % och inte absoluta mått som px eller pt. Ev kombinerat med att sätta min- och max-värden för kritiska delar, tex menyns spaltbredd.
+            </p>
+            <p class="p-list"><b>Validera både HTML </b><a href="http://validator.w3.org/ ">http://validator.w3.org/</a><b> och CSS </b><a href="http://jigsaw.w3.org/css-validator/">http://jigsaw.w3.org/css-validator/</a> Bild, ljud och video ska ha motsvarande innehåll som text.</p>
+            <h3>Med sunt förnuft kommer man långt</h3>
+            <p>
+                Om det finns en standard, använd den. Tex om jag klickar på logotypen ska jag komma tillbaka till förstasidan.
+                Du ska inte förvirra eller irritera dina besökare. Bakåtknappen vet alla var den sitter.
+            </p>
+            <h3>Du måste kunna grunderna först</h3>
+            <p>
+                Reglerna eller snarare riktlinjerna har finslipats under lång tid. Du ska givetvis känna till dessa, men reglerna ska också tänjas, prövas, ifrågasättas och utvecklas.
+                Typografin och våra läsvanor har nog utvecklats/ändrats mer mellan 1996 (då Matthew Carter skapade Georgia och Verdana på uppdrag av Microsoft och internet slog igenom hos gemena man i Sverige) och idag än vad som skedde under hela 1900-talet.
+            </p>
+            <h3>De vanligaste webbläsarna enligt statistik från W3C:</h3>
+            <table class="labTable">
+                <thead>
+                    <tr>
+                        <th>Webbläsare:</th>
+                        <th class="wide">Andel:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Chrome 21</td>
+                        <td>35 %</td>
+                    </tr>
+                    <tr>
+                        <td>Explorer 8</td>
+                        <td>18 %</td>
+                    </tr>
+                    <tr>
+                        <td>Explorer 9</td>
+                        <td>8 %</td>
+                    </tr>
+                    <tr>
+                        <td>Firefox 14</td>
+                        <td>6,5 %</td>
+                    </tr>
+                    <tr>
+                        <td>Safari 5</td>
+                        <td>2 %</td>
+                    </tr>
+                    <tr>
+                        <td>Safari 6</td>
+                        <td>2 %</td>
+                    </tr>
+                    <tr>
+                        <td>Firefox 12</td>
+                        <td>1,5 %</td>
+                    </tr>
+                    <tr>
+                        <td>Firefox 13 </td>
+                        <td>1,5 %</td>
+                    </tr>
+                    <tr>
+                        <td>Explorer 7 </td>
+                        <td>1 %</td>
+                    </tr>
+                    <tr>
+                        <td>Opera 12 </td>
+                        <td>1 %</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="small"><b>Skriven av: </b>Mikael Becker</p>
+            <p class="small"><b>Publicerad: </b>2012-11-01</p>
+            <p class="etikett"><b>Etiketter: </b><a href="#">#Design, </a><a href="#">#Webb, </a><a href="#">#Webbläsare, </a><a href="#">#Semantik, </a><a href="#">#HTML, </a><a href="#">#CSS</a></p>
+        </article>
+    </section>
+    <aside>
+        <h3>Etikitter:</h3>
+        <ul>
+            <li><a href="#"># Web design</a></li>
+            <li><a href="#"># Typografi</a></li>
+            <li><a href="#"># Kalligrafi</a></li>
+            <li><a href="#"># Typsnitt</a></li>
+            <li><a href="#"># Läsbarhet</a></li>
+            <li><a href="#"># Läslighet</a></li>
+            <li><a href="#"># Webb</a></li>
+            <li><a href="#"># Skärm</a></li>
+            <li><a href="#"># Design</a></li>
+            <li><a href="#"># Färg</a></li>
+            <li> <a href="#"># Webbläsare</a></li>
+            <li><a href="#"># Semantik</a></li>
+            <li><a href="#"># HTML</a></li>
+            <li><a href="#"># CSS</a></li>
+        </ul>
+    </aside>
+</div>
